@@ -1,11 +1,16 @@
-import React from "react";
+import * as React from "react";
+import { Container } from "@mui/material";
+import AppHeader from "../AppHeader/index";
 import "./App.scss";
 
-const App = () => {
+const App: React.FC = () => {
+
   return (
-    <div>
-      
-    </div>
+    <Container>
+      <AppHeader>
+        <h1>Elfbar</h1>
+      </AppHeader>
+    </Container>
   )
 };
 
