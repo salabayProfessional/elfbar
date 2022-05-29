@@ -5,41 +5,25 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import AppHeader from "./Components/AppHeader/AppHeader.tsx";
-
-const Home = () => {
-
-  return (
-    <h1>Home</h1>
-  )
-}
-
-const About = () => {
-
-  return (
-    <h1>Home</h1>
-  )
-}
-
-const User = () => {
-
-  return (
-    <h1>HomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHome</h1>
-  )
-}
+import AppHeader from "./Components/AppHeader";
+import AboutUs from "./Pages/AboutUs";
+import Elfbars from "./Pages/Elfbars";
+import Profile from "./Pages/Profile";
+import SignIn from "./Pages/SignIn";
+import SignUp from "./Pages/SignUp";
 
 const App = () => {
   return (
-    <Container disableGutters>
+    <Container disableGutters={true}>
       <BrowserRouter>
-        <AppHeader>
-          <h1>LOGO</h1>
-        </AppHeader>
+        <AppHeader />
         <React.Fragment>
             <Switch>
-              <Route exact path="/" component={Home}/>
-              <Route exact path="/elfbars" component={About}/>
-              <Route exact path="/sign-in" component={User}/>
+              <Route exact path="/about-us" component={AboutUs}/>
+              <Route exact path="/elfbars" component={Elfbars}/>
+              <Route exact path="/sign-in" component={SignIn}/>
+              <Route exact path="/sign-up" component={SignUp}/>
+              <Route exact path="/profile" component={Profile}/>
             </Switch>
         </React.Fragment>
     </BrowserRouter>
