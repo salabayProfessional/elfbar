@@ -26,3 +26,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.primary-text-field {
+  width: 400px;
+}
+
+.background_inscription {
+  user-select: none;
+  z-index: 0;
+  transform: rotate(90deg);
+  position: absolute;
+  left: 70vh;
+  top: 200px;
+  font-size: 87px;
+}

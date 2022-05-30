@@ -1,31 +1,20 @@
-.primary-text-field {
-  width: 400px;
-}
+.sign-up {
+  
+  .sign-up__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15vh;
+  }
+  
+  .sign-up_link {
+    color: darkcyan;
+  }
 
-.sign-up__content {
-  display: flex;
-  flex-direction: column;
-  margin-top: 15vh;
-}
-
-.sign-up__bottom {
-  display: flex;
-  justify-content: space-between;
-  width: 400px;
-  margin-top: 50px;
-  align-items: center;
-}
-
-.switcher-to-sign-in {
-  color: darkcyan;
-}
-
-.background-inscription {
-  user-select: none;
-  z-index: 0;
-  transform: rotate(90deg);
-  position: absolute;
-  left: 70vh;
-  top: 200px;
-  font-size: 87px;
+  .sign-up__bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin-top: 50px;
+    align-items: center;
+  }
 }
