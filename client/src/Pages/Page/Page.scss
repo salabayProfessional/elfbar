@@ -1,8 +1,9 @@
-#page {
-  color: rgb(184, 191, 197);
-  min-height: 100vh;
-  position: absolute; 
+.page {
+  min-height: 93vh;
+  position: inherit; 
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0;
+  margin: 0;
 }

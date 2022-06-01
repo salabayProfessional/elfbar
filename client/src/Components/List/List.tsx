@@ -1,4 +1,5 @@
 import React from 'react';
+import "./List.scss";
 
 interface ListProps {
   children: (data: any) => React.ReactNode,
@@ -15,9 +16,9 @@ const List: React.FC<ListProps> = ({
   const nodeElements = options.map((element: any) => renderLabel(element));
 
   return (
-    <div className={className}>
+    <ul className={"list " + className}>
       {nodeElements}
-    </div>
+    </ul>
   )
 };
 

@@ -1,0 +1,75 @@
+#main-btn {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  top: 95vh;
+}  
+
+#locations {
+  height: 440px;
+}
+
+#shares {
+  height: 800px;
+}
+
+#tops {
+  height: 600px;
+}
+
+.about-us {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  .about-us__header {
+    height: 95vh;
+    position: initial;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .about-us__menu-wrapper {
+    right: 100px;
+    position: absolute;
+
+    .about-us__menu {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      z-index: 1000;
+    }
+  }
+
+  .about-us__section {
+    width: 100%;
+    z-index: 2;
+  }
+  
+  .about-us__link {
+    margin-top: 20px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .active {
+    border-bottom: 2px solid black;
+  }
+
+  .about-us__footer {
+    height: 300px;
+    width: 100%;
+    background-color: black;
+    color: ivory;
+  }
+}
+
+
+
+.location__image {
+  height: 400px;
+  width: 100%;
+}

@@ -10,11 +10,11 @@ const Page: React.FC<PageProps> = ({
   children,
 }) => {
   return (
-    <Container id="page" >
+    <div className="page" >
       {
         children
       }
-    </Container>
+    </div>
   )
 };
 

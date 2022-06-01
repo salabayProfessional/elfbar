@@ -1,100 +1,48 @@
 import React from "react";
 import { Button, TextField } from "@mui/material";
 import Page from "../Page";
-import "./SignUp.scss";
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import List from "../../Components/List";
-
-interface Option {
-  name: string,
-  required: boolean,
-  color: "info" | "error" | "primary" | "secondary" | "success" | "warning",
-  label: string,
-  variant: "standard" | "filled" | "outlined", 
-};
-
-const options: Option[] = [
-  {
-    name: "firstName",
-    required: true,
-    color: "info",
-    label: "Login",
-    variant: "standard" 
-  },
-  {
-    name: "lastName",
-    required: true,
-    color: "info",
-    label: "Password",
-    variant: "standard" 
-  },
-  {
-    name: "surname",
-    required: true,
-    color: "info",
-    label: "Login",
-    variant: "standard" 
-  },
-  {
-    name: "login",
-    required: true,
-    color: "info",
-    label: "Password",
-    variant: "standard" 
-  },
-  {
-    name: "email",
-    required: true,
-    color: "info",
-    label: "Login",
-    variant: "standard" 
-  },
-  {
-    name: "password",
-    required: true,
-    color: "info",
-    label: "Password",
-    variant: "standard" 
-  },
-  {
-    name: "age",
-    required: true,
-    color: "info",
-    label: "Password",
-    variant: "standard" 
-  },
-];
+import * as yup from "yup";
+import { yupResolver } from '@hookform/resolvers/yup';
+import "./SignUp.scss";
+import options from "./options";
+import Option from "../../Components/Label/Option";
+import Label from "../../Components/Label";
 
 const SignUp: React.FC = () => {
 
+  const schema = yup.object({
+    firstName: yup.string().required(),
+    lastName: yup.number().positive().integer().required(),
+    surname: yup.string().required(),
+    login: yup.string().min(6).max(12).required(),
+    email: yup.string().email().required(),
+    password: yup.string().required(),
+    age: yup.number().max(3).required()
+  }).required();
+  
   const {
     register,
     handleSubmit,
-  } = useForm();
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(schema)
+  });
 
   const onSubmit = handleSubmit((data) => console.log(data));
-
-  const label = (element: Option) => {
-    return (
-    <TextField className="primary-text-field" 
-      {...register(element.name)} 
-      required={element.required}  
-      fullWidth={false} 
-      color={element.color}
-      label={element.label} 
-      variant={element.variant}   
-      key={element.name}
-    />
-    )
-  }
 
   return (
     <Page>
       <form onSubmit={onSubmit} className="sign-up">
 
         <List options={options} className="sign-up__body">
-          { label }
+          {(option: Option) => {
+            return (
+              <Label element={option} register={register} errors={errors}/>
+            )
+          }}
         </List>
 
         <div className="sign-up__bottom">

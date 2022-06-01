@@ -6,9 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
+}
 
-  height: 200vh;
-  position: relative;
+div {
+  padding: 0;
+  margin: 0;
 }
 
 body.light-mode {
@@ -27,10 +29,6 @@ code {
     monospace;
 }
 
-.primary-text-field {
-  width: 400px;
-}
-
 .background_inscription {
   user-select: none;
   z-index: 0;
@@ -39,4 +37,22 @@ code {
   left: 70vh;
   top: 200px;
   font-size: 87px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.group {
+  display: flex;
+  justify-content: space-around;
 }
